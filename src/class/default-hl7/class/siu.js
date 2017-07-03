@@ -1,3 +1,4 @@
+import HL7 from './hl7'
 
 export default class SIU extends HL7 {
 
@@ -6,7 +7,7 @@ export default class SIU extends HL7 {
   }
 
   produceMessage() {
-    let adt_message = this._createHeader()
+    return 'test-siu'
   }
 
 }

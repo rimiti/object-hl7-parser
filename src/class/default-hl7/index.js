@@ -7,20 +7,20 @@ export default class DefaultHL7Encoder {
   constructor(message, config) {
     this.message = message
     this.config = config
-    this.setDynamicEncoder()
+    this._setDynamicTypeEncoder()
   }
 
-  setDynamicEncoder() {
-    if (this.message.type === 'SIU') { this.setEncoder(new SIU()) }
-    else if (this.message.type === 'ADT') { this.setEncoder(new ADT()) }
+  _setDynamicTypeEncoder() {
+    if (this.message.type === 'SIU') { this._setEncoder(new SIU()) }
+    else if (this.message.type === 'ADT') { this._setEncoder(new ADT()) }
     else throw new Error("unsupported type message")
   }
 
-  setEncoder(encoder) {
+  _setEncoder(encoder) {
     this.encoder = encoder;
   }
 
-  produceHL7Message(){
+  produceHL7Message() {
     return this.encoder.produceMessage()
   }
 
