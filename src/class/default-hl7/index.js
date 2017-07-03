@@ -11,8 +11,8 @@ export default class DefaultHL7Encoder {
   }
 
   setDynamicEncoder() {
-    if (message.type === 'SIU') { this.setEncoder(new SIU()) }
-    else if (message.type === 'ADT') { this.setEncoder(new ADT()) }
+    if (this.message.type === 'SIU') { this.setEncoder(new SIU()) }
+    else if (this.message.type === 'ADT') { this.setEncoder(new ADT()) }
     else throw new Error("unsupported type message")
   }
 
