@@ -5,21 +5,21 @@ export default class DefaultHL7Encoder {
   constructor(message_to_encode, config) {
     this.message_to_encode = message_to_encode
     this.config = config
-    this.produceHL7Message()
+    this._produceHL7Message()
   }
 
-  produceHL7Message() {
+  _produceHL7Message() {
 
     for (let key in this.config.mappings) {
-      this.createSegment(key, this.config.mappings[key])
+      this._createSegment(key, this.config.mappings[key])
     }
-    console.log(this.hl7_message.log())
+
     return this.hl7_message
   }
 
-  createSegment(segmentName, segmentConfig) {
+  _createSegment(segmentName, segmentConfig) {
 
-    let args = this.createContent(segmentName, segmentConfig)
+    let args = this._createContent(segmentName, segmentConfig)
 
     if (!this.hl7_message) {
       args.shift()
@@ -31,7 +31,7 @@ export default class DefaultHL7Encoder {
 
   }
 
-  createContent(segmentName, segmentConfig) {
+  _createContent(segmentName, segmentConfig) {
 
     let segment_arguments = []
 
@@ -40,11 +40,11 @@ export default class DefaultHL7Encoder {
     for (let segment_index = 0; segment_index < segmentConfig.configuration.components.numberOfSeparatorInsideSegment.length; segment_index++) {
       let numberOfSeparatorInsideSegment = segmentConfig.configuration.components.numberOfSeparatorInsideSegment[segment_index]
 
-      var fields = segmentConfig.values.filter(function(f) { return f.component[0] == segment_index})
-      var fields_content = []
+      let fields = segmentConfig.values.filter(function(f) { return f.component[0] == segment_index})
+      let fields_content = []
       if (fields.length > 0) {
         for (let i = 0; i < fields.length; i++) {
-          fields_content[fields[i].component[1] - 1] = "T"
+          fields_content[fields[i].component[1] - 1] = this._deepFind(this.message_to_encode, fields[i].field)
         }
         segment_arguments.push(fields_content.join(this.config.delimiters.componentSeperator))
       } else {
@@ -53,6 +53,20 @@ export default class DefaultHL7Encoder {
     }
 
     return segment_arguments
+  }
+
+  _deepFind(obj, path) {
+    let paths = path.split('.')
+    let current = obj
+
+    for (let i = 0; i < paths.length; ++i) {
+      if (!current[paths[i]]) {
+        return null
+      } else {
+        current = current[paths[i]]
+      }
+    }
+    return current
   }
 
 }
