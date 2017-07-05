@@ -6,13 +6,25 @@ describe('SIU', () => {
 
   describe('Notification of new appointment booking', function() {
     it(`S12`, (done) => {
+
       const s12 = {
         "id" : "1",
-        "type": "SIU"
+        "type": "SIU",
+        "fiche": {
+          "id": "23211",
+          "type": "xx",
+          "utc_time": "2017-21-06",
+          "triggered_by": "ouss"
+        },
+        "appointment": {
+          "id": "2131",
+          "type": "xdf",
+          "utc_time": "2017-21-06",
+          "triggered_by": "dimitri"
+        }
       }
 
       const obj = parser.encode(s12, {})
-      obj.produceHL7Message().should.be.equal('test-siu')
 
       done()
     })
