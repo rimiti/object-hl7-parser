@@ -34,13 +34,12 @@ export default class DefaultHL7Encoder {
   _createContent(segmentName, segmentConfig) {
 
     let segment_arguments = []
-
     segment_arguments.push(segmentName.toUpperCase())
-
-    for (let segment_index = 0; segment_index < segmentConfig.configuration.components.numberOfSeparatorInsideSegment.length; segment_index++) {
-      let numberOfSeparatorInsideSegment = segmentConfig.configuration.components.numberOfSeparatorInsideSegment[segment_index]
-
-      let fields = segmentConfig.values.filter(function(f) { return f.component[0] == segment_index})
+    for (let component_index = 0; component_index < segmentConfig.configuration.components.count; component_index++) {
+      let numberOfSeparatorInsideComponent = segmentConfig.configuration.components.seperators.filter(function(component){
+        return component.position === component_index
+      })[0]
+      let fields = segmentConfig.values.filter(function(f) { return f.component[0] == component_index})
       let fields_content = []
       if (fields.length > 0) {
         for (let i = 0; i < fields.length; i++) {
@@ -48,7 +47,7 @@ export default class DefaultHL7Encoder {
         }
         segment_arguments.push(fields_content.join(this.config.delimiters.componentSeperator))
       } else {
-        segment_arguments.push(this.config.delimiters.componentSeperator.repeat(numberOfSeparatorInsideSegment))
+        segment_arguments.push(this.config.delimiters.componentSeperator.repeat((numberOfSeparatorInsideComponent) ? numberOfSeparatorInsideComponent.numberOfSeparator : 0))
       }
     }
 
