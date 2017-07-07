@@ -11,18 +11,14 @@ export default class Encoder {
   }
 
   produceHL7Message() {
-
     for (let key in this.config.mappings) {
       this._createSegment(key, this.config.mappings[key])
     }
-
     return this.hl7_message
   }
 
   _createSegment(segmentName, segmentConfig) {
-
     let args = this._createContent(segmentName, segmentConfig)
-
     if (!this.hl7_message) {
       args.shift()
       this.hl7_message = new simpleHL7.Message(...args)
@@ -30,19 +26,19 @@ export default class Encoder {
     } else {
       this.hl7_message.addSegment(...args)
     }
-
   }
 
   _createContent(segmentName, segmentConfig) {
-
     let segment_arguments = []
     segment_arguments.push(segmentName.toUpperCase())
     for (let component_index = 0; component_index < segmentConfig.configuration.components.count; component_index++) {
-      let numberOfSeparatorInsideComponent = segmentConfig.configuration.components.seperators.filter(function(component){
+      let numberOfSeparatorInsideComponent = segmentConfig.configuration.components.seperators.filter((component) => {
         return component.position === component_index
       })[0]
 
-      let fields = segmentConfig.values.filter(function(f) { return f.component[0] == component_index})
+      let fields = segmentConfig.values.filter((f) => {
+        return f.component[0] === component_index
+      })
       let fields_content = []
       if (fields.length > 0) {
         for (let i = 0; i < fields.length; i++) {
@@ -57,7 +53,6 @@ export default class Encoder {
         segment_arguments.push(this.config.delimiters.componentSeperator.repeat((numberOfSeparatorInsideComponent) ? numberOfSeparatorInsideComponent.numberOfSeparator : 0))
       }
     }
-
     return segment_arguments
   }
 
@@ -74,5 +69,4 @@ export default class Encoder {
     }
     return current
   }
-
 }

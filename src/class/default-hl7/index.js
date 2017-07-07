@@ -5,7 +5,6 @@ import SIU from './hl7/siu'
 export default class DefaultEncoder {
 
   constructor() {
-
   }
 
   getAdtEncoder(message) {
