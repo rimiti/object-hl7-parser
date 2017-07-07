@@ -11,7 +11,7 @@ export default class ADT {
 
   getA04() {
     this.encoder._setConfig(A04Config)
-    return 'a04'
+    return this.encoder._produceHL7Message()
   }
 
   getA08() {

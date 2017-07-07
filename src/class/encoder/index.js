@@ -37,7 +37,7 @@ export default class Encoder {
 
     let segment_arguments = []
     segment_arguments.push(segmentName.toUpperCase())
-    for (let component_index = 0; component_index <= segmentConfig.configuration.components.count; component_index++) {
+    for (let component_index = 0; component_index < segmentConfig.configuration.components.count; component_index++) {
       let numberOfSeparatorInsideComponent = segmentConfig.configuration.components.seperators.filter(function(component){
         return component.position === component_index
       })[0]
@@ -46,7 +46,11 @@ export default class Encoder {
       let fields_content = []
       if (fields.length > 0) {
         for (let i = 0; i < fields.length; i++) {
-          fields_content[fields[i].component[1] - 1] = this._deepFind(this.message_to_encode, fields[i].field)
+          if (this._deepFind(this.message_to_encode, fields[i].field)) {
+            fields_content[fields[i].component[1] - 1] = this._deepFind(this.message_to_encode, fields[i].field)
+          } else if (fields[i].default) {
+            fields_content[fields[i].component[1] - 1] = fields[i].default
+          }
         }
         segment_arguments.push(fields_content.join(this.config.delimiters.componentSeperator))
       } else {
