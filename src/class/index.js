@@ -1,22 +1,51 @@
-import Encoder from './encoder'
+import DefaultEncoder from './default-hl7'
 
-let configuration
+let encoder
 
 export default {
 
-  /**
-   * @description Configure usage
-   * @param config
-   */
-  configure: (config) => configuration = config,
+  configure: (config) => {
+    if (config.version == "hl7-2.4") {
+      encoder = new DefaultEncoder()
+    } else {
+      throw new Error(`Unknown format: ${config.version}`)
+    }
+  },
 
-  /**
-   * @description Encoder message with configuration
-   * @param message
-   * @return {Decoder}
-   */
-  encode: (message) => {
-    let encoder = new Encoder(message, configuration.mapping)
-    return encoder
+  getADT04: (message) => {
+    return encoder.getAdtEncoder(message).getA04()
+  },
+
+  getADT08: (message) => {
+    return encoder.getAdtEncoder(message).getA08()
+  },
+
+  getADT40: (message) => {
+    return encoder.getAdtEncoder(message).getA40()
+  },
+
+  getSIU12: (message) => {
+    return encoder.getSiuEncoder(message).getS12()
+  },
+
+  getSIU13: (message) => {
+    return encoder.getSiuEncoder(message).getS13()
+  },
+
+  getSIU14: (message) => {
+    return encoder.getSiuEncoder(message).getS14()
+  },
+
+  getSIU15: (message) => {
+    return encoder.getSiuEncoder(message).getS15()
+  },
+
+  getSIU17: (message) => {
+    return encoder.getSiuEncoder(message).getS17()
+  },
+
+  getSIU26: (message) => {
+    return encoder.getSiuEncoder(message).getS26()
   }
+
 }

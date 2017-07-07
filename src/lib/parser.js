@@ -1,8 +1,7 @@
 import parser from '../class'
-import config from '../config/default-hl7.json'
 
 parser.configure({
-    "mapping": config
+    "version": "hl7-2.4"
   }
 )
 
