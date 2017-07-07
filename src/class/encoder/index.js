@@ -1,9 +1,12 @@
 import simpleHL7 from 'simple-hl7'
 
-export default class HL7Producer {
+export default class Encoder {
 
-  constructor(message_to_encode, config) {
+  constructor(message_to_encode) {
     this.message_to_encode = message_to_encode
+  }
+
+  _setConfig(config) {
     this.config = config
   }
 

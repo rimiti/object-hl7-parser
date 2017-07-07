@@ -1,0 +1,68 @@
+{
+  "format": "hl7-2.4",
+  "adapter": "default",
+  "delimiters": {
+    "fieldSeperator": "|",
+    "componentSeperator": "^",
+    "subcomponentSeperator": "&",
+    "escapeCharacter": "\\",
+    "repititionCharacter": "~",
+    "segmentSeperator": "\r"
+  },
+  "mappings": {
+    "msh": {
+      "configuration": {
+        "components": {
+          "count": 32,
+          "seperators": [
+            {"position": 6 , "numberOfSeparator": 1},
+            {"position": 16 , "numberOfSeparator": 1},
+            {"position": 20 , "numberOfSeparator": 4},
+            {"position": 22 , "numberOfSeparator": 6},
+            {"position": 28 , "numberOfSeparator": 4},
+            {"position": 30 , "numberOfSeparator": 3}
+          ]
+        }
+      },
+      "values": [
+
+      ]
+    },
+    "sch": {
+      "configuration": {
+        "components": {
+          "count": 10,
+          "seperators": [
+            {"position": 1 , "numberOfSeparator": 5},
+            {"position": 2 , "numberOfSeparator": 2},
+            {"position": 3 , "numberOfSeparator": 5},
+            {"position": 4 , "numberOfSeparator": 4},
+            {"position": 5 , "numberOfSeparator": 3},
+            {"position": 7 , "numberOfSeparator": 1}
+          ]
+        }
+      },
+      "values": [
+
+      ]
+    },
+    "pid": {
+      "configuration": {
+        "components": {
+          "count": 10,
+          "seperators": [
+            {"position": 1 , "numberOfSeparator": 5},
+            {"position": 2 , "numberOfSeparator": 2},
+            {"position": 3 , "numberOfSeparator": 5},
+            {"position": 4 , "numberOfSeparator": 4},
+            {"position": 5 , "numberOfSeparator": 3},
+            {"position": 7 , "numberOfSeparator": 1}
+          ]
+        }
+      },
+      "values": [
+
+      ]
+    }
+  }
+}
