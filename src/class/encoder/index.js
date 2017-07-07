@@ -6,11 +6,11 @@ export default class Encoder {
     this.message_to_encode = message_to_encode
   }
 
-  _setConfig(config) {
+  setConfig(config) {
     this.config = config
   }
 
-  _produceHL7Message() {
+  produceHL7Message() {
 
     for (let key in this.config.mappings) {
       this._createSegment(key, this.config.mappings[key])

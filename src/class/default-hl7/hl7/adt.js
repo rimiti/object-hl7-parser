@@ -10,17 +10,17 @@ export default class ADT {
   }
 
   getA04() {
-    this.encoder._setConfig(A04Config)
-    return this.encoder._produceHL7Message()
+    this.encoder.setConfig(A04Config)
+    return this.encoder.produceHL7Message()
   }
 
   getA08() {
-    this.encoder._setConfig(A08Config)
+    this.encoder.setConfig(A08Config)
     return 'a08'
   }
 
   getA40() {
-    this.encoder._setConfig(A40Config)
+    this.encoder.setConfig(A40Config)
     return 'a40'
   }
 

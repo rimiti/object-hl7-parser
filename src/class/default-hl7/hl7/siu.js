@@ -13,32 +13,32 @@ export default class SIU {
   }
 
   getS12() {
-    this.encoder._setConfig(S12Config)
+    this.encoder.setConfig(S12Config)
     return 's12'
   }
 
   getS13() {
-    this.encoder._setConfig(S13Config)
+    this.encoder.setConfig(S13Config)
     return 's13'
   }
 
   getS14() {
-    this.encoder._setConfig(S14Config)
+    this.encoder.setConfig(S14Config)
     return 's14'
   }
 
   getS15() {
-    this.encoder._setConfig(S15Config)
+    this.encoder.setConfig(S15Config)
     return 's15'
   }
 
   getS17() {
-    this.encoder._setConfig(S17Config)
+    this.encoder.setConfig(S17Config)
     return 's17'
   }
 
   getS26() {
-    this.encoder._setConfig(S26Config)
+    this.encoder.setConfig(S26Config)
     return 's26'
   }
 

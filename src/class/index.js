@@ -5,11 +5,11 @@ let encoder
 export default {
 
   configure: (config) => {
-    if (config.version == "hl7-2.4") {
-      encoder = new DefaultEncoder()
-    } else {
-      throw new Error(`Unknown format: ${config.version}`)
+    if (config.version === "hl7-2.4") {
+      return encoder = new DefaultEncoder()
     }
+    throw new Error(`Unknown format: ${config.version}`)
+
   },
 
   getADT04: (message) => {
