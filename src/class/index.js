@@ -5,11 +5,10 @@ let encoder
 export default {
 
   configure: (config) => {
-    if (config.version === "hl7-2.4") {
+    if (config.version === 'hl7-2.4') {
       return encoder = new DefaultEncoder()
     }
     throw new Error(`Unknown format: ${config.version}`)
-
   },
 
   getADT04: (message) => {
@@ -47,5 +46,4 @@ export default {
   getSIU26: (message) => {
     return encoder.getSiuEncoder(message).getS26()
   }
-
 }
