@@ -17,11 +17,7 @@ const paths = {
   test: {
     src: 'test/**/*.js',
     dist: 'dist/test/',
-    run: 'dist/test/**/*.js',
-    config: {
-      src: 'test/config/**/*',
-      dist: 'dist/test/config'
-    }
+    run: 'dist/test/**/*.js'
   },
   config: {
     src: 'src/config/**/*',
@@ -78,8 +74,6 @@ gulp.task('babel', ['babel:src', 'babel:test'])
 gulp.task('config', ['clean:config'], () => {
   gulp.src(`${paths.config.src}.json`)
     .pipe(gulp.dest(paths.config.dist))
-  gulp.src(`${paths.test.config.src}.json`)
-    .pipe(gulp.dest(paths.test.config.dist))
 })
 
 /**
