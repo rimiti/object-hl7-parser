@@ -63,7 +63,6 @@
         "components": {
           "count": 14,
           "seperators": [
-            {"position": 3 , "numberOfSeparator": 4}
           ]
         }
       },
@@ -89,26 +88,33 @@
         { "field": "fiche.sex", "component": [7,1] },
         { "field": "fiche.patient_alias", "component": [8,1] },
         { "field": "fiche.race", "component": [9,1] },
-        { "field": "fiche.address.street", "component": [10,1] },
-        { "field": "fiche.address.street_2", "component": [10,2] },
-        { "field": "fiche.address.city", "component": [10,3] },
-        { "field": "fiche.address.state", "component": [10,4] },
-        { "field": "fiche.address.zipcode", "component": [10,5] },
-        { "field": "fiche.address.country", "component": [10,6] },
-        { "field": "fiche.address.address_type", "component": [10,6] },
-        { "field": "fiche.address.address_type", "component": [10,7] },
-        { "field": "fiche.address.other_geographic_designation", "component": [10,8] },
-        { "field": "fiche.address.country_code", "component": [10,9] },
-        { "field": "fiche.address.census_tract", "component": [10,10] },
+        { "field": "fiche.address",
+          "children": [
+            {"field": "street", "component": [10,1] },
+            {"field": "street_2", "component": [10,2] },
+            {"field": "city", "component": [10,3] },
+            {"field": "state", "component": [10,4] },
+            {"field": "zipcode", "component": [10,5] },
+            {"field": "country", "component": [10,6] },
+            {"field": "address_type", "component": [10,7] },
+            {"field": "other_geographic_designation", "component": [10,8] },
+            {"field": "country_code", "component": [10,9] },
+            {"field": "census_tract", "component": [10,10] }
+          ]
+        },
         { "field": "fiche.country_code", "component": [11,1] },
-        { "field": "fiche.contacts.number", "component": [12,1] },
-        { "field": "fiche.contacts.telecommunication_use_code", "component": [12,2] },
-        { "field": "fiche.contacts.telecommunication_equipment_code", "component": [12,3] },
-        { "field": "fiche.contacts.email", "component": [12,4] },
-        { "field": "fiche.contacts.country_code", "component": [12,5] },
-        { "field": "fiche.contacts.area_code", "component": [12,6] },
-        { "field": "fiche.contacts.phone_number", "component": [12,7] },
-        { "field": "fiche.contacts.extension", "component": [12,8] }
+        { "field": "fiche.contacts", "type":"array",
+          "children": [
+            {"field": "number", "component": [12,1] },
+            {"field": "telecommunication_use_code", "component": [12,2] },
+            {"field": "telecommunication_equipment_code", "component": [12,3] },
+            {"field": "email", "component": [12,4] },
+            {"field": "country_code", "component": [12,5] },
+            {"field": "area_code", "component": [12,6] },
+            {"field": "phone_number", "component": [12,7] },
+            {"field": "extension", "component": [12,8] }
+          ]
+        }
       ]
     },
     "pv1": {

@@ -7,7 +7,7 @@ describe('ADT', () => {
 
   describe('patient registration', function() {
     it(`A04`, (done) => {
-      const a04 = `MSH|^~\\&|mllp_http_proxy|proxy00-prodaz|mllp_http_proxypartenaire|proxy00-prodpartenaire|20160923155836||ADT^A04|154779|P|2.5.1|||||FRA|UTF-8|\nEVN|ADT^A04|20160923155836|\nPID|||123456^^^ODS^^PI||DO BAIRRO^Dimitri^^^^^L||19920506|M|Nom usuel||Avenue des Champs-Élysées^^Paris^^75000||0100000000^^^dimitri.dobairro@clicrdv.com|\nPV1||U|`
+      const a04 = `MSH|^~\\&|mllp_http_proxy|proxy00-prodaz|mllp_http_proxypartenaire|proxy00-prodpartenaire|20160923155836||ADT^A04|154779|P|2.5.1|||||FRA|UTF-8|\nEVN|ADT^A04|20160923155836|\nPID|||123456^^^ODS^^PI||DO BAIRRO^Dimitri^^^^^L||19920506|M|Nom usuel||Avenue des Champs-Élysées^^Paris^^75000^^^^^||0100000000^^^dimitri.dobairro@clicrdv.com^^^^~0200000000^^^^^^^|\nPV1||U|`
 
       const message_to_encode = {
         "message_datetime": "20160923155836",
@@ -26,10 +26,12 @@ describe('ADT', () => {
             "city": "Paris",
             "zipcode": "75000"
           },
-          "contacts": {
+          "contacts": [{
             "number": "0100000000",
             "email": "dimitri.dobairro@clicrdv.com"
-          }
+          },{
+            "number": "0200000000"
+          }]
         }
       }
 
