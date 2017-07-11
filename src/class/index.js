@@ -11,39 +11,39 @@ export default {
     throw new Error(`Unknown format: ${config.version}`)
   },
 
-  getADT04: (message) => {
-    return encoder.getAdtEncoder(message).getA04()
+  getADT04: (message, config) => {
+    return encoder.getAdtEncoder(message).getA04(config)
   },
 
-  getADT08: (message) => {
-    return encoder.getAdtEncoder(message).getA08()
+  getADT08: (message, config) => {
+    return encoder.getAdtEncoder(message).getA08(config)
   },
 
-  getADT40: (message) => {
-    return encoder.getAdtEncoder(message).getA40()
+  getADT40: (message, config) => {
+    return encoder.getAdtEncoder(message).getA40(config)
   },
 
-  getSIU12: (message) => {
-    return encoder.getSiuEncoder(message).getS12()
+  getSIU12: (message, config) => {
+    return encoder.getSiuEncoder(message).getS12(config)
   },
 
-  getSIU13: (message) => {
-    return encoder.getSiuEncoder(message).getS13()
+  getSIU13: (message, config) => {
+    return encoder.getSiuEncoder(message).getS13(config)
   },
 
-  getSIU14: (message) => {
-    return encoder.getSiuEncoder(message).getS14()
+  getSIU14: (message, config) => {
+    return encoder.getSiuEncoder(message).getS14(config)
   },
 
-  getSIU15: (message) => {
-    return encoder.getSiuEncoder(message).getS15()
+  getSIU15: (message, config) => {
+    return encoder.getSiuEncoder(message).getS15(config)
   },
 
-  getSIU17: (message) => {
-    return encoder.getSiuEncoder(message).getS17()
+  getSIU17: (message, config) => {
+    return encoder.getSiuEncoder(message).getS17(config)
   },
 
-  getSIU26: (message) => {
-    return encoder.getSiuEncoder(message).getS26()
+  getSIU26: (message, config) => {
+    return encoder.getSiuEncoder(message).getS26(config)
   }
 }

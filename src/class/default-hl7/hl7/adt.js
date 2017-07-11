@@ -9,18 +9,18 @@ export default class ADT {
     this.encoder = new Encoder(message)
   }
 
-  getA04() {
-    this.encoder.setConfig(A04Config)
+  getA04(config) {
+    this.encoder.setConfig(config ? config : A04Config)
     return this.encoder.produceHL7Message()
   }
 
-  getA08() {
-    this.encoder.setConfig(A08Config)
+  getA08(config) {
+    this.encoder.setConfig(config ? config : A08Config)
     return 'a08'
   }
 
-  getA40() {
-    this.encoder.setConfig(A40Config)
+  getA40(config) {
+    this.encoder.setConfig(config ? config : A40Config)
     return 'a40'
   }
 

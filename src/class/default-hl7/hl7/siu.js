@@ -12,33 +12,33 @@ export default class SIU {
     this.encoder = new Encoder(message)
   }
 
-  getS12() {
-    this.encoder.setConfig(S12Config)
+  getS12(config) {
+    this.encoder.setConfig(config ? config : S12Config)
     return 's12'
   }
 
-  getS13() {
-    this.encoder.setConfig(S13Config)
+  getS13(config) {
+    this.encoder.setConfig(config ? config : S13Config)
     return 's13'
   }
 
-  getS14() {
-    this.encoder.setConfig(S14Config)
+  getS14(config) {
+    this.encoder.setConfig(config ? config : S14Config)
     return 's14'
   }
 
-  getS15() {
-    this.encoder.setConfig(S15Config)
+  getS15(config) {
+    this.encoder.setConfig(config ? config : S15Config)
     return 's15'
   }
 
-  getS17() {
-    this.encoder.setConfig(S17Config)
+  getS17(config) {
+    this.encoder.setConfig(config ? config : S17Config)
     return 's17'
   }
 
-  getS26() {
-    this.encoder.setConfig(S26Config)
+  getS26(config) {
+    this.encoder.setConfig(config ? config : S26Config)
     return 's26'
   }
 
