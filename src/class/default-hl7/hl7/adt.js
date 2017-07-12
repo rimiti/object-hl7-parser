@@ -16,12 +16,12 @@ export default class ADT {
 
   getA08(config) {
     this.encoder.setConfig(config ? config : A08Config)
-    return 'a08'
+    return this.encoder.produceHL7Message()
   }
 
   getA40(config) {
     this.encoder.setConfig(config ? config : A40Config)
-    return 'a40'
+    return this.encoder.produceHL7Message()
   }
 
 }

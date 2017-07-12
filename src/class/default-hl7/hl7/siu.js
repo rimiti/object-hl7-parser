@@ -14,7 +14,7 @@ export default class SIU {
 
   getS12(config) {
     this.encoder.setConfig(config ? config : S12Config)
-    return 's12'
+    return this.encoder.produceHL7Message()
   }
 
   getS13(config) {
