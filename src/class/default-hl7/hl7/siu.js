@@ -19,7 +19,7 @@ export default class SIU {
 
   getS13(config) {
     this.encoder.setConfig(config ? config : S13Config)
-    return 's13'
+    return this.encoder.produceHL7Message()
   }
 
   getS14(config) {
