@@ -44,7 +44,7 @@
     "sch": {
       "configuration": {
         "components": {
-          "count": 17,
+          "count": 26,
           "seperators": []
         }
       },
@@ -82,17 +82,12 @@
         { "field": "appointment.filler_contact_phone", "component": [16,1] },
         { "field": "appointment.filler_contact_address", "component": [17,1] },
         { "field": "appointment.filler_contact_location", "component": [18,1] },
-        { "field": "appointment.entred_by.contacts", "children": [
-            { "field": "id", "component": [19,1] },
-            { "field": "firstname", "component": [19,2] },
-            { "field": "lastname", "component": [19,3] }
-          ]
-        },
+        { "field": "appointment.entred_by.name", "component": [19,1] },
         { "field": "appointment.entred_by_contact_phone", "component": [20,1] },
         { "field": "appointment.entred_by_contact_location", "component": [21,1] },
         { "field": "appointment.parent_placer_appointment_id", "component": [22,1] },
         { "field": "appointment.parent_filler_appointment_id", "component": [23,1] },
-        { "field": "appointment.filler_status_code", "component": [24,1] }
+        { "field": "appointment.filler_status_code", "component": [24,1], "default": "Booked" }
       ]
     },
     "pid": {
@@ -157,7 +152,7 @@
     "rgs": {
       "configuration": {
         "components": {
-          "count": 3,
+          "count": 1,
           "seperators": []
         }
       },
@@ -167,26 +162,28 @@
         { "field": "ressource_group.group_id", "component": [2,1] }
       ]
     },
-    "ais": {
+    "aig": {
       "configuration": {
         "components": {
-          "count": 12,
+          "count": 4,
           "seperators": []
         }
       },
       "values": [
-        { "field": "appointment.informations.set_id", "component": [0,1] },
-        { "field": "appointment.informations.segment_action_code", "component": [1,1] },
-        { "field": "appointment.informations.universal_service_identifier", "component": [2,1] },
-        { "field": "appointment.informations.start_datetime", "component": [3,1] },
-        { "field": "appointment.informations.start_datetime_offset", "component": [4,1] },
-        { "field": "appointment.informations.start_datetime_offset_units", "component": [5,1] },
-        { "field": "appointment.informations.duration", "component": [6,1] },
-        { "field": "appointment.informations.duration_units", "component": [7,1] },
-        { "field": "appointment.informations.allow_substitution_code", "component": [8,1] },
-        { "field": "appointment.informations.filler_status_code", "component": [9,1] },
-        { "field": "appointment.informations.placer_additional_info", "component": [10,1] },
-        { "field": "appointment.informations.filler_additional_info", "component": [11,1] }
+        { "field": "general_ressource.set_id", "component": [0,1] },
+        { "field": "general_ressource.segment_action_code", "component": [1,1] },
+        { "field": "general_ressource.ressource_id", "component": [2,1] },
+        { "field": "general_ressource.ressource_type", "component": [3,1] },
+        { "field": "general_ressource.ressource_group", "component": [4,1] },
+        { "field": "general_ressource.ressource_quantity", "component": [5,1] },
+        { "field": "general_ressource.ressource_quantity_unit", "component": [6,1] },
+        { "field": "general_ressource.start_date_time", "component": [7,1] },
+        { "field": "general_ressource.start_time_offset", "component": [8,1] },
+        { "field": "general_ressource.start_time_offset_unit", "component": [9,1] },
+        { "field": "general_ressource.duration", "component": [10,1] },
+        { "field": "general_ressource.duration_unit", "component": [11,1] },
+        { "field": "general_ressource.allow_substitution_code", "component": [12,1] },
+        { "field": "general_ressource.filler_status_code", "component": [13,1] }
       ]
     },
     "nte": {
