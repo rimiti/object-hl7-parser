@@ -28,7 +28,7 @@
         { "field": "security", "component": [5,1] },
         { "field": "message_type", "component": [6,1], "default": "SIU" },
         { "field": "message_type_ref", "component": [6,2], "default": "S26" },
-        { "field": "message_control_id", "component": [7,1], "default": "154779" },
+        { "field": "message_control_id", "component": [7,1], "default": "256660" },
         { "field": "processing_id", "component": [8,1], "default": "P" },
         { "field": "version_id", "component": [9,1], "default": "2.5.1" },
         { "field": "sequence_number", "component": [10,1] },
@@ -44,7 +44,7 @@
     "sch": {
       "configuration": {
         "components": {
-          "count": 17,
+          "count": 26,
           "seperators": []
         }
       },
@@ -82,17 +82,12 @@
         { "field": "appointment.filler_contact_phone", "component": [16,1] },
         { "field": "appointment.filler_contact_address", "component": [17,1] },
         { "field": "appointment.filler_contact_location", "component": [18,1] },
-        { "field": "appointment.entred_by.contacts", "children": [
-            { "field": "id", "component": [19,1] },
-            { "field": "firstname", "component": [19,2] },
-            { "field": "lastname", "component": [19,3] }
-          ]
-        },
+        { "field": "appointment.entred_by.name", "component": [19,1] },
         { "field": "appointment.entred_by_contact_phone", "component": [20,1] },
         { "field": "appointment.entred_by_contact_location", "component": [21,1] },
         { "field": "appointment.parent_placer_appointment_id", "component": [22,1] },
         { "field": "appointment.parent_filler_appointment_id", "component": [23,1] },
-        { "field": "appointment.filler_status_code", "component": [24,1] }
+        { "field": "appointment.filler_status_code", "component": [24,1], "default": "Booked" }
       ]
     },
     "pid": {
@@ -157,7 +152,7 @@
     "rgs": {
       "configuration": {
         "components": {
-          "count": 3,
+          "count": 1,
           "seperators": []
         }
       },
@@ -170,7 +165,7 @@
     "aig": {
       "configuration": {
         "components": {
-          "count": 13,
+          "count": 4,
           "seperators": []
         }
       },

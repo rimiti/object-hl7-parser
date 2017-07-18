@@ -39,7 +39,7 @@ export default class SIU {
 
   getS26(config) {
     this.encoder.setConfig(config ? config : S26Config)
-    return 's26'
+    return this.encoder.produceHL7Message()
   }
 
 }
