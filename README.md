@@ -43,12 +43,6 @@ Import your parser, configure it and use it !
 ```js
 // index.js
 import parser from 'object-hl7-parser'
-import config from './json-hl7-mapping.json'
-
-parser.configure({
-    "mapping": config
-  }
-)
 
 const object = {
     firstname: "Dimitri",
@@ -58,8 +52,18 @@ const object = {
     mobile: "33600000000"
 }
 
-const hl7Message = parser.encode(object)
-console.log(hl7Message)
+// Convert object to ADT - A04 message
+const ADT04Message = parser.getADT04(object)
+console.log(ADT04Message)
+
+// Convert object to ADT - A08 message
+const ADT08Message = parser.getADT08(object)
+console.log(ADT08Message)
+
+// Convert object to SIU - S26 message
+const SIU26Message = parser.getSIU26(object)
+console.log(SIU26Message)
+
 ```
 
 ## Tests
