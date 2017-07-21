@@ -10,14 +10,14 @@ export default class Encoder {
     this.config = config
   }
 
-  produceHL7Object() {
+  getObject() {
     for (let key in this.config.mappings) {
       this._createSegment(key, this.config.mappings[key])
     }
     return this.hl7_message
   }
 
-  produceHL7Message() {
+  getMessage() {
     for (let key in this.config.mappings) {
       this._createSegment(key, this.config.mappings[key])
     }
