@@ -14,32 +14,32 @@ export default class SIU {
 
   getS12(config) {
     this.encoder.setConfig(config ? config : S12Config)
-    return this.encoder.produceHL7Message()
+    return this.encoder
   }
 
   getS13(config) {
     this.encoder.setConfig(config ? config : S13Config)
-    return this.encoder.produceHL7Message()
+    return this.encoder
   }
 
   getS14(config) {
     this.encoder.setConfig(config ? config : S14Config)
-    return this.encoder.produceHL7Message()
+    return this.encoder
   }
 
   getS15(config) {
     this.encoder.setConfig(config ? config : S15Config)
-    return this.encoder.produceHL7Message()
+    return this.encoder
   }
 
   getS17(config) {
     this.encoder.setConfig(config ? config : S17Config)
-    return this.encoder.produceHL7Message()
+    return this.encoder
   }
 
   getS26(config) {
     this.encoder.setConfig(config ? config : S26Config)
-    return this.encoder.produceHL7Message()
+    return this.encoder
   }
 
 }
