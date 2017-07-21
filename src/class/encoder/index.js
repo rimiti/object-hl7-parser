@@ -10,11 +10,18 @@ export default class Encoder {
     this.config = config
   }
 
-  produceHL7Message() {
+  produceHL7Object() {
     for (let key in this.config.mappings) {
       this._createSegment(key, this.config.mappings[key])
     }
     return this.hl7_message
+  }
+
+  produceHL7Message() {
+    for (let key in this.config.mappings) {
+      this._createSegment(key, this.config.mappings[key])
+    }
+    return this.hl7_message.log()
   }
 
   _createSegment(segmentName, segmentConfig) {
