@@ -3,7 +3,6 @@ import babel from 'gulp-babel'
 import sourcemaps from 'gulp-sourcemaps'
 import path from 'path'
 import del from 'del'
-import {spawn} from 'child_process'
 import ava from 'gulp-ava'
 import gutil from 'gulp-util'
 
