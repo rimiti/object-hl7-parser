@@ -339,5 +339,5 @@ Available methods on the parser:
 ## Tests
 ```js
 // Run tests
-gulp mocha
+npm run test
 ```
