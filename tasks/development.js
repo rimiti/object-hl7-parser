@@ -6,8 +6,6 @@ import del from 'del'
 import {spawn} from 'child_process'
 import ava from 'gulp-ava'
 import gutil from 'gulp-util'
-import istanbul from 'gulp-istanbul'
-import {Instrumenter} from 'isparta'
 
 const paths = {
   js: {
@@ -108,19 +106,6 @@ gulp.task('ava', () => {
   gulp.src([paths.test.run], {read: false})
     .pipe(ava({verbose: true}))
     .on('error', gutil.log)
-})
-
-/**
- * @description Execute pre-test
- * @example gulp pre-test
- */
-gulp.task('pre-test', () => {
-  gulp.src(paths.js.src)
-    .pipe(istanbul({
-      instrumenter: Instrumenter,
-      includeUntested: true
-    }))
-    .pipe(istanbul.hookRequire())
 })
 
 /**
