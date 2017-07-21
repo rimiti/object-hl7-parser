@@ -305,10 +305,10 @@ const message_to_encode = {
 const getSIU12 = parser.getSIU12(message_to_encode, siu12Config)
 
 // If you want a stringified output
-console.log(getSIU12.produceHL7Message())
+console.log(getSIU12.getMessage())
 
 // If you want an object output
-// console.log(getSIU12.produceHL7Object())
+// console.log(getSIU12.getObject())
 ```
 
 Output message:
