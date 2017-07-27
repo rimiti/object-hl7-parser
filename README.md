@@ -345,7 +345,7 @@ npm run test
 ```
 
 ## Related packages
-Convert your HL7 message to an object ([object-hl7-parser](https://github.com/rimiti/hl7-object-parser)).
+Convert your HL7 message to an object ([object-hl7-parser](https://github.com/rimiti/hl7-object-parser) ).
 
 
 ## License
