@@ -343,3 +343,10 @@ Available methods on the parser:
 // Run tests
 npm run test
 ```
+
+## Related packages
+Convert your HL7 message to an object ([object-hl7-parser](https://github.com/rimiti/hl7-object-parser) ).
+
+
+## License
+MIT © [Dimitri DO BAIRRO](https://dimsolution.com)
