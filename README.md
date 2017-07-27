@@ -1,4 +1,6 @@
-# object-hl7-parser [![Build Status](https://travis-ci.org/rimiti/object-hl7-parser.svg?branch=master)](https://travis-ci.org/rimiti/object-hl7-parser) [![Coverage Status](https://coveralls.io/repos/github/rimiti/object-hl7-parser/badge.svg?branch=master)](https://coveralls.io/github/rimiti/object-hl7-parser?branch=master) [![Dependency Status](https://www.versioneye.com/user/projects/5957b4f30fb24f0035d3c394/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5957b4f30fb24f0035d3c394) [![npm version](https://badge.fury.io/js/object-hl7-parser.svg)](https://badge.fury.io/js/object-hl7-parser)
+# object-hl7-parser
+[![Build Status](https://travis-ci.org/rimiti/object-hl7-parser.svg?branch=master)](https://travis-ci.org/rimiti/object-hl7-parser) [![Coverage Status](https://coveralls.io/repos/github/rimiti/object-hl7-parser/badge.svg?branch=master)](https://coveralls.io/github/rimiti/object-hl7-parser?branch=master) [![Issue Count](https://codeclimate.com/github/rimiti/object-hl7-parser/badges/issue_count.svg)](https://codeclimate.com/github/rimiti/object-hl7-parser) [![Dependency Status](https://www.versioneye.com/user/projects/5957b4f30fb24f0035d3c394/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5957b4f30fb24f0035d3c394) [![NPM version](https://badge.fury.io/js/object-hl7-parser.svg)](https://badge.fury.io/js/object-hl7-parser) [![Downloads](https://img.shields.io/npm/dt/object-hl7-parser.svg)](https://img.shields.io/npm/dt/object-hl7-parser.svg)
+
 Convert your object into HL7 message.
 
 # Install
@@ -28,7 +30,7 @@ $ npm install object-hl7-parser
 
 ## How to use it ?
 
-Create your hl7 mapping configuration file respecting this format. Below an example of a SIU12 configuration. 
+Create your hl7 mapping configuration file respecting this format. Below an example of a SIU12 configuration.
 
 ```json
 // mapping/siu-12.json
