@@ -10,18 +10,15 @@ export default class Encoder {
     this.config = config
   }
 
+  getMessage() {
+    return this.getObject().log()
+  }
+
   getObject() {
     for (let key in this.config.mappings) {
       this._createSegment(key, this.config.mappings[key])
     }
     return this.hl7_message
-  }
-
-  getMessage() {
-    for (let key in this.config.mappings) {
-      this._createSegment(key, this.config.mappings[key])
-    }
-    return this.hl7_message.log()
   }
 
   _createSegment(segmentName, segmentConfig) {
