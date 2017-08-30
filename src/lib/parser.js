@@ -1,9 +1,8 @@
 import DefaultEncoder from '../class/default-hl7'
 
-const defaultConfiguration = {"version": "hl7-2.4"}
-let encoder = {}
+let encoder = new DefaultEncoder()
 
-export function configure(config = defaultConfiguration) {
+export function configure(config) {
   if (config.version === 'hl7-2.4') return encoder = new DefaultEncoder()
   throw new Error(`Unknown format: ${config.version}`)
 }
