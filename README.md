@@ -243,7 +243,7 @@ Create your hl7 mapping configuration file respecting this format. Below an exam
 Import your parser and set your configuration as parameter.
 
 ```js
-import parser from 'object-hl7-parser'
+import * as parser from 'object-hl7-parser'
 import siu12Config from './mapping/siu-12.json'
 
 const message_to_encode = {
