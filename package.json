@@ -1,5 +1,5 @@
 {
-  "name": "object-hl7-parser",
+  "name": "@rimiti/object-hl7-parser",
   "version": "1.4.0",
   "description": "Node object to hl7 parser",
   "license": "MIT",
